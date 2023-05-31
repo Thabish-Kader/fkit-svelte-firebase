@@ -1,1 +1,11 @@
-<h1 class="text-red-500 text-2xl">Hello world</h1>
+<script>
+	let user = { loggedIn: false };
+
+	function toggle() {
+		user.loggedIn = !user.loggedIn;
+	}
+</script>
+
+<button on:click={toggle}> Log out </button>
+
+<button on:click={toggle}> Log in </button>
