@@ -1,18 +1,18 @@
 <script lang="ts">
 </script>
 
-<div class="mt-[89px] ml-[277px] text-white w-[930px]">
+<section class="mt-[60px] sm:ml-[20px] xl:ml-[277px] text-white col-span-2 pr-8">
 	<p class="">Date</p>
-	<h1 class="pt-4 text-3xl font-bold">Even name</h1>
-	<p class="pt-4">
+	<h1 class="pt-2 text-3xl font-bold">Even name</h1>
+	<p class="pt-2">
 		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro aspernatur similique praesentium
 		velit officia molestiae explicabo nulla incidunt tempora, sint animi facere commodi in facilis
 		provident quam minus numquam ipsam.
 	</p>
 
-	<h2 class="pt-14 text-xl font-bold">Join the event</h2>
+	<h2 class="pt-6 text-xl font-bold">Join the event</h2>
 
-	<form class="pt-9">
+	<form class="pt-6">
 		<!-- 1st row -->
 		<div class="grid grid-cols-2 gap-6">
 			<div class="flex flex-col">
@@ -75,10 +75,13 @@
 			</div>
 		</div>
 		<!-- Checkbox and button -->
-		<div class="flex space-x-4 pt-6">
-			<input type="checkbox" />
+		<div class="flex space-x-4 pt-6 items-center">
+			<input
+				type="checkbox"
+				class="w-4 h-4 text-blue-600 bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 border-gray-600"
+			/>
 			<p>I would like to recieve emails about future webinars</p>
 		</div>
-		<button class="py-6 mb-20 px-8 bg-white text-black mt-8">Register for this event</button>
+		<button class="py-6 px-8 bg-white text-black mt-8">Register for this event</button>
 	</form>
-</div>
+</section>
