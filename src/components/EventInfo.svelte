@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section class="mt-[60px] sm:ml-[20px] xl:ml-[277px] text-white col-span-2 pr-8">
+<section class="mt-[60px] ml-[20px] xl:ml-[277px] text-white col-span-2 pr-8">
 	<p class="">Date</p>
 	<h1 class="pt-2 text-3xl font-bold">Even name</h1>
 	<p class="pt-2">
@@ -13,8 +13,8 @@
 	<h2 class="pt-6 text-xl font-bold">Join the event</h2>
 
 	<form class="pt-6">
-		<!-- 1st row -->
-		<div class="grid grid-cols-2 gap-6">
+		<div class="flex flex-col xl:grid xl:grid-cols-2 gap-6">
+			<!-- 1st row -->
 			<div class="flex flex-col">
 				<label for="first-name">First name</label>
 				<input
