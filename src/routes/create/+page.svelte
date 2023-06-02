@@ -64,11 +64,3 @@
 		</div>
 	</div>
 </main>
-
-<!-- 
-    Event name
-    description
-    guests
-    hosted by
-    date
- -->
