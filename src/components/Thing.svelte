@@ -13,6 +13,7 @@
 	export let name = '';
 
 	// ...but the "emoji" variable is fixed upon initialisation of the component
+	//@ts-ignore
 	const emoji = emojis[name];
 
 	// observe in the console which entry is removed
