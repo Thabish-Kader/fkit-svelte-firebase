@@ -1,9 +1,7 @@
 <script lang="ts">
-	import Inner from '../components/Inner.svelte';
-
-	function handleMessage(event: CustomEvent<{ text: string }>) {
-		alert(event.detail.text);
-	}
+	import EventInfo from '../components/EventInfo.svelte';
 </script>
 
-<Inner on:msg={handleMessage} />
+<div>
+	<EventInfo />
+</div>
