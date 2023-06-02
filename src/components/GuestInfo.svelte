@@ -1,6 +1,6 @@
 <script lang="ts"></script>
 
-<section class="h-screen w-screen bg-bgright">
+<section class="h-screen w-full bg-secondary">
 	<div class="mt-[224px] ml-[89px] text-white">
 		<!-- Socials -->
 		<div class="mr-[496px]">

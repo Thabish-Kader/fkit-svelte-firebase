@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				bgleft: '#272732',
-				bgright: '#2B2D38',
+				primary: '#272732',
+				secondary: '#2B2D38',
 				inputclr: '#23252F',
 				borderclr: '#464856'
 			}
