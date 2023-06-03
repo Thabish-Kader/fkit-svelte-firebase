@@ -20,9 +20,9 @@
 					>Create Event</button
 				>
 				<button
-					on:click={() => goto('/join')}
+					on:click={() => goto('/eventlist')}
 					class="py-[23px] px-[86px] bg-black text-white text-xl w-[299px] hover:bg-white hover:text-black duration-300 transition-colors"
-					>Join Event</button
+					>List of Events</button
 				>
 			</div>
 		</div>
