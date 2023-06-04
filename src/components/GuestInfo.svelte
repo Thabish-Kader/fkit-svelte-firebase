@@ -1,4 +1,11 @@
-<script lang="ts"></script>
+<script lang="ts">
+	export let guestName: string;
+	export let guestDesignation: string;
+	export let guestPhoto: string;
+	export let hostName: string;
+	export let hostEmail: string;
+	export let hostPhoto: string;
+</script>
 
 <section class="h-screen w-full bg-secondary">
 	<div class="mt-[224px] ml-[89px] text-white">
@@ -12,56 +19,25 @@
 			</div>
 		</div>
 
-		<!-- Guests/Hosts -->
+		<!-- Guest -->
 		<div class="mt-[175px]">
 			<p class="capitalize tracking-widest">GUESTS</p>
 			<div class="flex mt-4">
-				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOn9shF9kc5vPqgA30DXU0prx5-aYyh28Rw&usqp=CAU"
-					alt="profile pics"
-					class="rounded-full h-12 w-12 object-cover"
-				/>
+				<img src={guestPhoto} alt={guestName} class="rounded-full h-12 w-12 object-cover" />
 				<div class="flex flex-col ml-2">
-					<p class="text-sm font-bold">Host name</p>
-					<p class="text-xs text-gray-200">Designation</p>
+					<p class="text-sm font-bold">{guestName}</p>
+					<p class="text-xs text-gray-200">{guestDesignation}</p>
 				</div>
 			</div>
 
-			<div class="flex mt-4">
-				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOn9shF9kc5vPqgA30DXU0prx5-aYyh28Rw&usqp=CAU"
-					alt="profile pics"
-					class="rounded-full h-12 w-12 object-cover"
-				/>
-				<div class="flex flex-col ml-2">
-					<p class="text-sm font-bold">Host name</p>
-					<p class="text-xs text-gray-200">Designation</p>
-				</div>
-			</div>
-
-			<div class="flex mt-4">
-				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOn9shF9kc5vPqgA30DXU0prx5-aYyh28Rw&usqp=CAU"
-					alt="profile pics"
-					class="rounded-full h-12 w-12 object-cover"
-				/>
-				<div class="flex flex-col ml-2">
-					<p class="text-sm font-bold">Host name</p>
-					<p class="text-xs text-gray-200">Designation</p>
-				</div>
-			</div>
 			<!-- Host -->
 
 			<p class="capitalize tracking-widest mt-[50px]">HOSTED BY</p>
 			<div class="flex mt-4">
-				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOn9shF9kc5vPqgA30DXU0prx5-aYyh28Rw&usqp=CAU"
-					alt="profile pics"
-					class="rounded-full h-12 w-12 object-cover"
-				/>
+				<img src={hostPhoto} alt="profile pics" class="rounded-full h-12 w-12 object-cover" />
 				<div class="flex flex-col ml-2">
-					<p class="text-sm font-bold">Host name</p>
-					<p class="text-xs text-gray-200">Designation</p>
+					<p class="text-sm font-bold">{hostName}</p>
+					<p class="text-xs text-gray-200">{hostEmail}</p>
 				</div>
 			</div>
 		</div>
