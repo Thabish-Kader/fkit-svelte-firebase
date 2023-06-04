@@ -4,6 +4,7 @@
 	import type { User } from 'firebase/auth';
 	import { authStore } from '../../store/store';
 	import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+	import { goto } from '$app/navigation';
 
 	let eventName: string;
 	let eventDescription: string;
@@ -69,6 +70,7 @@
 		try {
 			const eventRef = doc(db, 'events', eventName);
 			setDoc(eventRef, eventInfo, { merge: true });
+			goto('/eventlist');
 		} catch (error) {
 			console.log(`An error ocuured while createing a document ${error}`);
 		}
