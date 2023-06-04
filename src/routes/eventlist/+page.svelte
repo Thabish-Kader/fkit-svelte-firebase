@@ -17,13 +17,19 @@
 
 <main class="text-gray-100 mt-10 max-w-5xl mx-auto">
 	<h1 class="text-5xl font-bold my-5">Events</h1>
-
-	{#each events as event}
-		<EventCard
-			date={event.eventDate}
-			eventName={event.eventName}
-			description={event.eventDescription}
-			hostName={event.hostName}
-		/>
-	{/each}
+	<div class="grid px-4 md:grid-cols-3 gap-8">
+		{#each events as event}
+			<EventCard
+				date={event.eventDate}
+				eventName={event.eventName}
+				description={event.eventDescription}
+				hostName={event.hostName}
+				hostEmail={event.hostemail}
+				hostPhoto={event.hostPhoto}
+				guestName={event.guestName}
+				guestDesignation={event.guestDesignation}
+				guestPhoto={event.guestPhoto}
+			/>
+		{/each}
+	</div>
 </main>
