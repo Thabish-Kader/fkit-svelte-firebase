@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { formatDate } from '../helpers/formatDate';
 
 	export let date: string;
@@ -33,6 +34,7 @@
 	</div>
 	<div class="">
 		<button
+			on:click={() => goto(`/join/${eventName}`)}
 			class="text-white tracking-wider px-4 hover:bg-black hover:text-white rounded-full duration-300 transition-colors"
 			>+Join
 		</button>
