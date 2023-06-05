@@ -14,28 +14,13 @@
 </script>
 
 <main class="">
-	<div class="flex justify-between m-4 mx-10">
-		<h1 class="text-white text-center text-2xl">
-			Welcome <span class="text-purple-500 italic font-bold">
-				{currentUser?.displayName}
-			</span>
-		</h1>
-		<div class="flex space-x-2">
-			<img
-				src={currentUser?.photoURL}
-				alt={currentUser?.displayName}
-				class="h-12 w-12 rounded-full"
-			/>
-			<button on:click={authHandlers.logout} class="bg-white p-2 rounded-full">Log Out</button>
-		</div>
-	</div>
-	<div class="relative mt-[150px] ml-[133px] flex">
+	<div class="relative mt-[150px] p-2 lg:ml-[133px] flex">
 		<!-- Main Tagline -->
-		<div>
-			<h1 class="text-[32px] font-bold text-white w-[710px]">
+		<div class="text-center">
+			<h1 class="text-[32px] font-bold text-white lg:w-[710px]">
 				Your Ticket to Extraordinary: Register, Discover, Connect!
 			</h1>
-			<div class="mt-[50px] space-x-[54px]">
+			<div class="flex flex-col px-10 sm:flex-row mt-20 gap-14">
 				<button
 					on:click={() => goto('/create')}
 					class="py-[23px] px-[86px] bg-white text-xl w-[299px] hover:bg-black hover:text-white duration-300 transition-colors"
@@ -48,12 +33,16 @@
 				>
 			</div>
 		</div>
-		<img src={heroPic} alt="herpic" class="absolute -top-[90px] left-[800px] h-[376px] w-[706px]" />
+		<img
+			src={heroPic}
+			alt="herpic"
+			class="absolute -top-[90px] left-[800px] h-[376px] w-[706px] hidden xl:block"
+		/>
 	</div>
 	<div
-		class="mx-auto max-w-[1500px] flex flex-col items-center mt-[93px] bg-secondary rounded-lg p-10"
+		class="mx-auto max-w-[1500px] flex flex-col items-center mt-[60px] bg-secondary rounded-lg p-10"
 	>
-		<div class="grid grid-cols-3 gap-x-10">
+		<div class="grid md:grid-cols-3 gap-x-10">
 			<!-- Feature-1 -->
 			<div class="">
 				<img src={hero1} alt="" class="h-[203px] w-[400px] py-2" />

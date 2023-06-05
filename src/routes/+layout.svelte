@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { auth } from '$lib/firebase';
 	import { authStore } from '../store/store';
+	import Navbar from '../components/Navbar.svelte';
 
 	const nonAuthPaths = ['/'];
 
@@ -23,5 +24,6 @@
 </script>
 
 <div>
+	<Navbar />
 	<slot />
 </div>

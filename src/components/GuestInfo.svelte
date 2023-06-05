@@ -49,19 +49,23 @@
 			<!-- Recent Members -->
 
 			<p class="capitalize tracking-widest mt-10">Recent Members</p>
-			<div class="flex flex-col mt-4">
+			<div class="grid grid-cols-2 mt-4">
 				{#if recentMembers.length === 0}
 					<p>No Members Yet</p>
 				{:else}
 					{#each recentMembers as member (member.memberName)}
-						<img
-							src={member.memberPhoto}
-							alt="profile pics"
-							class="rounded-full h-12 w-12 object-cover"
-						/>
-						<div class="flex flex-col ml-2">
-							<p class="text-sm font-bold">{member.memberName}</p>
-							<p class="text-xs text-gray-200">{member.memberEmail}</p>
+						<div class="mb-4">
+							<img
+								src={member.memberPhoto === null
+									? 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
+									: member.memberPhoto}
+								alt="profile pics"
+								class="rounded-full h-12 w-12 object-cover"
+							/>
+							<div class="flex flex-col ml-2">
+								<p class="text-sm font-bold">{member.memberName}</p>
+								<p class="text-xs text-gray-200">{member.memberEmail}</p>
+							</div>
 						</div>
 					{/each}
 				{/if}

@@ -13,36 +13,11 @@
 	let guestPhoto: File | undefined;
 	let guestDesignation: string;
 	let loading = false;
-
 	let currentUser: User | null = null;
 	authStore.subscribe((value) => {
 		currentUser = value.user;
 	});
-	function addInput() {
-		// Create a new input element
-		const inputContainer = document.querySelector('.guest-container');
-		const newInput = document.createElement('input');
-		const newPhotoInput = document.createElement('input');
-		const newDesignationInput = document.createElement('input');
-
-		// newInput
-		newInput.type = 'text';
-		newInput.placeholder = 'Enter guest name';
-		newInput.className = 'py-4 pl-5 pr-24 bg-transparent border border-borderclr flex-1 mb-4';
-
-		// newPhotoInput
-		newPhotoInput.type = 'file';
-		newPhotoInput.placeholder = 'Upload Guest Photo';
-		newPhotoInput.className = 'py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4';
-
-		// newDesignationInput
-		newDesignationInput.type = 'text';
-		newDesignationInput.placeholder = 'Enter guest designation';
-		newDesignationInput.className = 'py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4';
-
-		// Append the new input to the guest container
-		inputContainer?.append(newInput, newPhotoInput, newDesignationInput);
-	}
+	console.log(currentUser);
 
 	function handleFileInputChange(event: Event) {
 		const inputElement = event.target as HTMLInputElement;
@@ -168,7 +143,6 @@
 						/>
 					</div>
 				</div>
-				<button class="text-4xl ml-2 mt-4" on:click={addInput}>+</button>
 			</div>
 
 			<button
