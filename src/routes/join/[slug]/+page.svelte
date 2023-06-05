@@ -16,5 +16,6 @@
 		hostName={data.hostName}
 		hostEmail={data.hostemail}
 		hostPhoto={data.hostPhoto}
+		members={data.members}
 	/>
 </div>

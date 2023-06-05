@@ -1,5 +1,10 @@
 <script lang="ts">
+	import type { User } from 'firebase/auth';
 	import { formatDate } from '../helpers/formatDate';
+	import { authStore } from '../store/store';
+	import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+	import { db } from '$lib/firebase';
+	import { goto } from '$app/navigation';
 
 	export let date: string;
 	export let name: string;
@@ -7,11 +12,46 @@
 
 	const formattedDate = formatDate(date);
 
-	let memberName: string;
-	let memberLastName: string;
+	let eventHear: string;
+	let memberIndutry: string;
 	let memberEmail: string;
 	let memberTitle: string;
 	let memberOutcome: string;
+	let currentUser: User | null;
+	let loading = false;
+
+	authStore.subscribe((value) => {
+		currentUser = value.user;
+	});
+
+	const eventRef = doc(db, 'events', name);
+
+	async function registerMember() {
+		if (eventHear === undefined || memberIndutry === undefined)
+			return alert('The first two inputs cannot be empty');
+
+		let memberInfo = {
+			eventHear,
+			memberIndutry,
+			memberEmail,
+			memberTitle,
+			memberOutcome,
+			memberName: currentUser?.displayName,
+			memberPhoto: currentUser?.photoURL
+		};
+
+		loading = true;
+		try {
+			await updateDoc(eventRef, {
+				members: arrayUnion(memberInfo)
+			});
+			goto('/eventlist');
+		} catch (error) {
+			console.log(`Error while adding member ${error}`);
+		} finally {
+			loading = false;
+		}
+	}
 </script>
 
 <section class="mt-[60px] ml-[20px] xl:ml-[277px] text-white xl:col-span-2 pr-8">
@@ -27,37 +67,38 @@
 		<div class="flex flex-col xl:grid xl:grid-cols-2 gap-6">
 			<!-- 1st row -->
 			<div class="flex flex-col">
-				<label for="first-name">First name</label>
+				<label for="how">Where did you first hear about this event ?</label>
 				<input
-					id="first-name"
+					id="how"
 					type="text"
-					bind:value={memberName}
-					placeholder="Enter your first name"
+					bind:value={eventHear}
+					placeholder="Where did you hear about us ?"
 					class="py-4 pl-5 pr-24 bg-transparent border border-borderclr"
 				/>
 			</div>
 			<div class="flex flex-col">
-				<label for="last-name">Last name</label>
+				<label for="industry">Which sector do you work in ?</label>
 				<input
+					id="indutry"
 					type="text"
-					bind:value={memberLastName}
-					placeholder="Enter your last name"
+					bind:value={memberIndutry}
+					placeholder="Which sector do you work in ?"
 					class="py-4 pl-5 pr-24 bg-transparent border border-borderclr"
 				/>
 			</div>
 			<!-- 2nd row -->
 			<div class="flex flex-col">
-				<label for="email">Email</label>
+				<label for="email">Work Email</label>
 				<input
 					id="email"
 					type="email"
 					bind:value={memberEmail}
-					placeholder="Enter your email"
+					placeholder="Enter your work email"
 					class="py-4 pl-5 pr-24 bg-transparent border border-borderclr"
 				/>
 			</div>
 			<div class="flex flex-col">
-				<label for="title">Title</label>
+				<label for="title">Your Title</label>
 				<input
 					id="title"
 					type="text"
@@ -80,8 +121,11 @@
 		</div>
 		<!--  button -->
 		<button
-			class="py-6 px-8 bg-white text-black mt-8 hover:scale-105 hover:bg-green-500 transition-all duration-300"
-			>Register for this event</button
+			on:click={registerMember}
+			disabled={loading}
+			class="py-6 px-8 bg-white text-black mt-8 hover:scale-105 hover:bg-green-500 transition-all duration-300 disabled:cursor-not-allowed disabled:bg-white/30"
+		>
+			{loading ? 'Registering...' : 'Register for this event'}</button
 		>
 	</form>
 </section>

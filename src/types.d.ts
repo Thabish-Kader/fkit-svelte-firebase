@@ -8,4 +8,13 @@ export type TEvents = {
 	hostName: string;
 	hostPhoto: string;
 	hostemail: string;
+	members: Member[];
+};
+
+type Member = {
+	memberName: string;
+	memberLastName: string;
+	memberEmail: string;
+	memberPhoto: string;
+	memberOutcome: string;
 };

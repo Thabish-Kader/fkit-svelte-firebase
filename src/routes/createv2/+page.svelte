@@ -12,6 +12,7 @@
 	let guestName: string;
 	let guestPhoto: File | undefined;
 	let guestDesignation: string;
+
 	let loading = false;
 	let guestInputs: { name: string; photo: File | undefined; designation: string }[] = [];
 
@@ -21,16 +22,22 @@
 	});
 	function addInput() {
 		// Create a new input element
+		let firstguest = { name: guestName, photo: guestPhoto, designation: guestDesignation };
+		// guestInputs = [...guestInputs, firstguest];
+		guestInputs.push(firstguest);
+
 		const inputContainer = document.querySelector('.guest-container');
 		const newInput = document.createElement('input');
 		const newPhotoInput = document.createElement('input');
 		const newDesignationInput = document.createElement('input');
-		const newInput2 = {
+		const newInputs = {
 			name: '',
 			photo: undefined,
 			designation: ''
 		};
-		guestInputs.push(newInput2);
+		// guestInputs = [...guestInputs, newInputs];
+		guestInputs.push(newInputs);
+
 		// newInput
 		newInput.type = 'text';
 		newInput.placeholder = 'Enter guest name';
@@ -69,12 +76,45 @@
 			<!-- Input for guests -->
 			<div class="flex my-4">
 				<div class="flex flex-col flex-1 guest-container">
+					<div class="flex flex-col">
+						<!-- Guest name -->
+						<div class="flex flex-col flex-1">
+							<label for="guest">Enter guest name</label>
+							<input
+								type="text"
+								bind:value={guestName}
+								placeholder="Enter guest name"
+								class="py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4"
+							/>
+						</div>
+						<!-- Guest Photo -->
+						<div class="flex flex-col flex-1">
+							<label for="file_input">Upload Guest Photo</label>
+							<input
+								id="file_input"
+								type="file"
+								on:change={(e) => handleFileInputChange(e, 0)}
+								class="py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4"
+							/>
+						</div>
+					</div>
+					<!-- designation -->
+					<div class="flex flex-col">
+						<label for="designation">Enter guest designation</label>
+						<input
+							id="designation"
+							type="text"
+							bind:value={guestDesignation}
+							placeholder="Enter guest designation"
+							class="py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4"
+						/>
+					</div>
 					{#each guestInputs as input, index (index)}
 						<div class="flex flex-col flex-1">
 							<label for="guest">Enter guest name</label>
 							<input
 								type="text"
-								bind:value={guestInputs[index].name}
+								bind:value={input.name}
 								placeholder="Enter guest name"
 								class="py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4"
 							/>
@@ -95,7 +135,7 @@
 							<input
 								id="designation"
 								type="text"
-								bind:value={guestInputs[index].designation}
+								bind:value={input.designation}
 								placeholder="Enter guest designation"
 								class="py-4 pl-5 pr-24 bg-transparent border border-borderclr mb-4"
 							/>

@@ -64,7 +64,8 @@
 			guestDesignation: guestDesignation,
 			hostName: currentUser?.displayName,
 			hostPhoto: currentUser?.photoURL,
-			hostemail: currentUser?.email
+			hostemail: currentUser?.email,
+			members: []
 		};
 
 		try {
@@ -155,6 +156,7 @@
 							/>
 						</div>
 					</div>
+					<!-- designation -->
 					<div class="flex flex-col">
 						<label for="designation">Enter guest designation</label>
 						<input

@@ -1,18 +1,20 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { formatDate } from '../helpers/formatDate';
+	import type { Member } from '../types';
 
-	export let date: string;
-	export let description: string;
+	export let eventDate: string;
+	export let eventDescription: string;
 	export let hostName: string;
 	export let hostPhoto: string;
-	export let hostEmail: string;
+	export let hostemail: string;
 	export let eventName: string;
 	export let guestName: string;
 	export let guestDesignation: string;
 	export let guestPhoto: string;
+	export let members: Member[];
 
-	const formattedDate = formatDate(date);
+	const formattedDate = formatDate(eventDate);
 </script>
 
 <article
@@ -22,14 +24,14 @@
 >
 	<div class="flex flex-col">
 		<h1 class="capitalize text-2xl font-bold tracking-widest">{eventName}</h1>
-		<p class="py-2 text-gray-300 font-semibold">{description}</p>
+		<p class="py-2 text-gray-300 font-semibold">{eventDescription}</p>
 		<!-- host -->
 		<p>Host</p>
 		<div class="flex space-x-2 items-center">
 			<img src={hostPhoto} alt={hostName} class="h-10 w-10 rounded-full object-cover" />
 			<div class="flex flex-col">
 				<p>{hostName}</p>
-				<p>{hostEmail}</p>
+				<p>{hostemail}</p>
 			</div>
 		</div>
 		<!-- guest -->
@@ -42,5 +44,6 @@
 			</div>
 		</div>
 		<p class="text-gray-400 mt-4">Event Date: {formattedDate}</p>
+		<p>Members {members.length}</p>
 	</div>
 </article>
