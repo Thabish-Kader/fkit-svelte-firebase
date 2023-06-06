@@ -9,6 +9,7 @@ export const authStore = writable<{
 }>({
 	user: null
 });
+
 export const authHandlers = {
 	logout: async () => {
 		await auth.signOut().then(() => {
@@ -18,7 +19,7 @@ export const authHandlers = {
 				};
 			});
 		});
-		goto('/login');
+		goto('/');
 	},
 	loginWithGoogle: async () => {
 		await signInWithPopup(auth, googleProvider).then(() =>
