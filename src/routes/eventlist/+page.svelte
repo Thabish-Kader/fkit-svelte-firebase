@@ -12,7 +12,6 @@
 			events = events; //Svelte specific
 		});
 	});
-	console.log(events);
 </script>
 
 <main class="text-gray-100 mt-10 max-w-5xl mx-auto">

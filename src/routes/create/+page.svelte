@@ -17,7 +17,6 @@
 	authStore.subscribe((value) => {
 		currentUser = value.user;
 	});
-	console.log(currentUser);
 
 	function handleFileInputChange(event: Event) {
 		const inputElement = event.target as HTMLInputElement;
