@@ -21,3 +21,17 @@ Project created to learn Sveltekit and Firebase
 
 - Authentication
 - SSR
+
+## ScreenShots
+
+
+<img width="1680" alt="Screenshot 2023-06-06 at 4 51 00 PM" src="https://github.com/Thabish-Kader/fkit-svelte-firebase/assets/76642519/208f641d-4a2d-4ee2-af5d-651f4c4dc28c">
+
+<img width="1680" alt="Screenshot 2023-06-06 at 4 51 22 PM" src="https://github.com/Thabish-Kader/fkit-svelte-firebase/assets/76642519/e017c9fa-fa5a-4faf-b3fc-31dc8245176f">
+
+<img width="1680" alt="Screenshot 2023-06-06 at 4 51 41 PM" src="https://github.com/Thabish-Kader/fkit-svelte-firebase/assets/76642519/098de3ab-9fdc-4192-9860-e700a3b3e3a0">
+
+<img width="1680" alt="Screenshot 2023-06-06 at 4 52 06 PM" src="https://github.com/Thabish-Kader/fkit-svelte-firebase/assets/76642519/bb3a9356-2c4b-43e4-971b-d22dee959a47">
+
+
+
