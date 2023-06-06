@@ -13,7 +13,8 @@
 <br/>
 <br/>
 
-Project created to learn Sveltekit and Firebase.
+Project created to learn Sveltekit and Firebase. This is an event management app where user can view, create and join events.
+
 Inspired by fireship
 
 [Live App](https://fkit-svelte-firebase.vercel.app/)

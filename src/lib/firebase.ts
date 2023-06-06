@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { deleteApp, getApps, initializeApp } from 'firebase/app';
+import { deleteApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
@@ -20,19 +20,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// let firebaseApp: FirebaseApp;
+let firebaseApp: FirebaseApp;
 
-// if (!getApps().length) {
-// 	firebaseApp = initializeApp(firebaseConfig);
-// } else {
-// 	firebaseApp = getApps()[0];
-// 	deleteApp(firebaseApp);
-// 	firebaseApp = initializeApp(firebaseConfig);
-// }
-
-const firebaseApp = getApps().length
-	? (deleteApp(getApps()[0]), initializeApp(firebaseConfig))
-	: initializeApp(firebaseConfig);
+if (!getApps().length) {
+	firebaseApp = initializeApp(firebaseConfig);
+} else {
+	firebaseApp = getApps()[0];
+	deleteApp(firebaseApp);
+	firebaseApp = initializeApp(firebaseConfig);
+}
 
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
