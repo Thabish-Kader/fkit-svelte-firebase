@@ -51,6 +51,7 @@
 		}
 		loading = false;
 	}
+
 	async function uploadGuestPhoto() {
 		if (!guestPhoto) {
 			return null;

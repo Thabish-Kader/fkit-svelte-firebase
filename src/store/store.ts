@@ -12,23 +12,11 @@ export const authStore = writable<{
 
 export const authHandlers = {
 	logout: async () => {
-		await auth.signOut().then(() => {
-			authStore.update(() => {
-				return {
-					user: null
-				};
-			});
-		});
+		await auth.signOut();
 		goto('/');
 	},
 	loginWithGoogle: async () => {
-		await signInWithPopup(auth, googleProvider).then(() =>
-			authStore.update(() => {
-				return {
-					user: auth.currentUser
-				};
-			})
-		);
+		await signInWithPopup(auth, googleProvider);
 		goto('/main');
 	}
 };
