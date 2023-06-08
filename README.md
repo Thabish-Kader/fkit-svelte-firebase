@@ -15,7 +15,7 @@
 
 Project created to learn Sveltekit and Firebase. This is an event management app where user can view, create and join events.s
 
-Inspired by fireship
+Inspired by fireship.
 
 [Live App](https://fkit-svelte-firebase.vercel.app/)
 
