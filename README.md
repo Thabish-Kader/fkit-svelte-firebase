@@ -19,7 +19,7 @@ Inspired by fireship.
 
 [Live App](https://fkit-svelte-firebase.vercel.app/)
 
-## YT
+## YouTube
 
 [![Sveltekit Fundamentals | SvelteKit + Firebase: Build a Full Stack App seamlessly | Part 2 : Backend](https://ytcards.demolab.com/?id=3Q4fK1NdNMQ&title=Sveltekit+Fundamentals+%7C+SvelteKit+%2B+Firebase%3A+Build+a+Full+Stack+App+seamlessly+%7C+Part+2+%3A+Backend&lang=en&timestamp=1686376980&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&width=250 'Sveltekit Fundamentals | SvelteKit + Firebase: Build a Full Stack App seamlessly | Part 2 : Backend')](https://www.youtube.com/watch?v=3Q4fK1NdNMQ)
 [![Sveltekit Fundamentals | SvelteKit + Tailwind CSS: Supercharge Your Styling Workflow | Part 1 : UI](https://ytcards.demolab.com/?id=fTsVYwxjyS4&title=Sveltekit+Fundamentals+%7C+SvelteKit+%2B+Tailwind+CSS%3A+Supercharge+Your+Styling+Workflow+%7C+Part+1+%3A+UI&lang=en&timestamp=1686376980&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&width=250 'Sveltekit Fundamentals | SvelteKit + Tailwind CSS: Supercharge Your Styling Workflow | Part 1 : UI')](https://www.youtube.com/watch?v=fTsVYwxjyS4)
